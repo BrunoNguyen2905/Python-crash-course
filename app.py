@@ -1,4 +1,5 @@
 import math
+from collections.abc import Iterable
 
 x = 1
 y = 2
@@ -160,13 +161,13 @@ shopping_cart = [
     ("banana", 5, 0.25),
     ("orange", 8, 0.75)
 ]
-sum = 0
+total_price = 0
 for item, quantity, price in shopping_cart:
     total = price * quantity  # assuming each item costs 2 units
     print(f"{item}: {quantity}, Price: ${total}")
-    sum += total
+    total_price += total
 print("End of program")
-print("Total price:", f"${sum}")
+print("Total price:", f"${total_price}")
 
 totalEvenNumbers = 0
 for x in range(1, 10):
@@ -184,7 +185,7 @@ print(f"We have {totalEvenNumbers} even numbers.")
 # 1- Perform a task
 
 
-def greet_user(name):
+def greet_user(name) -> None:
     print(f"Hello, {name}!")
 
 
@@ -194,7 +195,7 @@ greet_user("Alice")
 
 
 # all required parameters must be provided before optional parameters
-def square_then_plus(number, plus=2):
+def square_then_plus(number: int, plus: int = 2) -> int:
     return number * number + plus
 
 
@@ -204,7 +205,7 @@ print("Squared value:", square_then_plus(number=5))
 # parentheses to create tuple of arguments  (2, 3, 4, 5) (tuple is similar to list but it is a collection of objects which cannot be changed/modified)
 
 
-def multiply(*numbers):
+def multiply(*numbers: tuple[int]) -> int:
     result = 1
     for number in numbers:
         print("number:", number)
@@ -225,3 +226,20 @@ multiply(2, 3, 4, 5)
 #                          .\env\Scripts\activate (Windows)
 # Install dependencies: pip install -r requirements.txt
 # Deactivate virtual environment: deactivate
+
+
+def calculate_discounted_price(items: Iterable[float], discount: float = 0.1) -> float:
+    """Calculate the discounted price given the original price and discount rate."""
+    discounted_price = sum(items) * (1 - discount)
+    return round(discounted_price, 2)
+
+
+def main() -> None:
+    items = [100.0, 200.0, 300.0]
+    discount = 0.15  # 15% discount
+    final_price = calculate_discounted_price(items, discount)
+    print(f"Final discounted price: ${final_price}")
+
+
+if __name__ == "__main__":
+    main()
