@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "name": "Alice",
+      "age": 23,
+      "major": "Computer Science",
+      "fulltime": true
+    },
+    {
+      "name": "Bob",
+      "age": 22,
+      "major": "Mathematics",
+      "fulltime": false
+    },
+    {
+      "name": "Charlie",
+      "age": 24,
+      "major": "Physics",
+      "fulltime": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "new_key": "new_value",
+  "students": [
+    {
+      "age": 23,
+      "fulltime": true,
+      "major": "Computer Science",
+      "name": "Alice"
+    },
+    {
+      "age": 22,
+      "fulltime": false,
+      "major": "Mathematics",
+      "name": "Bob"
+    },
+    {
+      "age": 24,
+      "fulltime": true,
+      "major": "Physics",
+      "name": "Charlie"
+    }
+  ]
+}
